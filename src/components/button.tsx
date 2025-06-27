@@ -4,7 +4,7 @@ import Text from "./text";
 
 export const buttonVariants = cva(
   `
-    flex items-center cursor-pointer
+    flex items-center justify-center cursor-pointer
     transition rounded-lg group gap-2
   `,
   {
