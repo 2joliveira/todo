@@ -11,6 +11,7 @@ import TrashIcon from "../assets/icons/trash.svg?react";
 import PencilIcon from "../assets/icons/pencil.svg?react";
 import { TaskState, type Task } from "../models/task";
 import { cx } from "class-variance-authority";
+import useTask from "../hooks/use-task";
 
 interface TaskItemProps {
   task: Task;
@@ -20,8 +21,8 @@ export default function TaskItem({ task }: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(
     task?.state === TaskState.Creating
   );
-
-  const [taskTitle, setTaskTitle] = useState("");
+  const [taskTitle, setTaskTitle] = useState(task?.title || "");
+  const { updateTask } = useTask();
 
   function handleEditTask() {
     setIsEditing(true);
@@ -37,7 +38,7 @@ export default function TaskItem({ task }: TaskItemProps) {
 
   function handleSaveTask(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log({ id: task.id, title: taskTitle });
+    updateTask(task.id, { title: taskTitle });
     setIsEditing(false);
   }
 
@@ -46,6 +47,7 @@ export default function TaskItem({ task }: TaskItemProps) {
       {isEditing ? (
         <form onSubmit={handleSaveTask} className="flex items-center gap-4">
           <InputText
+            value={taskTitle}
             className="flex-1"
             onChange={handleChangeTaskTitle}
             required
