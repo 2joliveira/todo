@@ -22,13 +22,17 @@ export default function TaskItem({ task }: TaskItemProps) {
     task?.state === TaskState.Creating
   );
   const [taskTitle, setTaskTitle] = useState(task?.title || "");
-  const { updateTask, updateTaskStatus } = useTask();
+  const { updateTask, updateTaskStatus, deleteTask } = useTask();
 
   function handleEditTask() {
     setIsEditing(true);
   }
 
   function handleExitEditTasking() {
+    if (task.state === TaskState.Creating) {
+      deleteTask(task.id);
+    }
+
     setIsEditing(false);
   }
 
@@ -46,6 +50,10 @@ export default function TaskItem({ task }: TaskItemProps) {
     const checked = e.target.checked;
 
     updateTaskStatus(task.id, checked);
+  }
+
+  function handleDeleteTask() {
+    deleteTask(task.id);
   }
 
   return (
@@ -79,7 +87,11 @@ export default function TaskItem({ task }: TaskItemProps) {
             {task?.title}
           </Text>
           <div className="flex gap-1">
-            <ButtonIcon icon={TrashIcon} variant="tertiary" />
+            <ButtonIcon
+              icon={TrashIcon}
+              variant="tertiary"
+              onClick={handleDeleteTask}
+            />
             <ButtonIcon
               icon={PencilIcon}
               variant="tertiary"
