@@ -55,6 +55,12 @@ Estratégias adotadas no desenvolvimento:
     $ npm run dev
   ```
 
+  
+## 🌐 Deploy
+A aplicação está hospedada na Vercel e pode ser acessada por:
+
+URL da API: [https://todo-bay-iota-83.vercel.app/][url]
+
 
 [react]: https://react.dev/
 [typescript]: https://www.typescriptlang.org/
@@ -63,3 +69,4 @@ Estratégias adotadas no desenvolvimento:
 [react_router]: https://reactrouter.com/
 [cva]: https://cva.style/docs
 [use-local-storage]: https://github.com/nas5w/use-local-storage
+[url]: https://todo-bay-iota-83.vercel.app/
