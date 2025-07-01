@@ -4,57 +4,62 @@
 
 </div>
 
-# React + TypeScript + Vite
+## **✅ ToDo**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação de listagem de tarefas interativa, desenvolvida em React com TypeScript, utilizando o Vite como bundler para alta performance. O objetivo é oferecer uma experiência completa de CRUD (criar, ler, atualizar, deletar) de tarefas, com interface moderna e responsiva. A aplicação inclui funcionalidades como adicionar, editar, marcar tarefas como concluídas, e gerenciamento de estados dinâmicos, tudo em uma SPA organizada.
 
-Currently, two official plugins are available:
+Estratégias adotadas no desenvolvimento:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  - Uso do CVA para estilização dinâmica e consistente com Tailwind CSS
 
-## Expanding the ESLint configuration
+  - Importação de SVGs via SVGR para maior flexibilidade e estilização
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  - Componentes construídos para serem acessíveis e flexíveis, com suporte a props para personalização
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+  - Gerenciamento do estado da aplicação via hooks customizados e React state
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  - Simulação de requisições HTTP para experiência de carregamento
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+## **💻 TECNOLOGIAS**
+
+- **[React][react]**
+- **[Vite][vite]**
+- **[Typescript][typescript]**
+- **[Tailwind][tailwind]**
+- **[React Router][react_router]**
+
+
+#### **Utilitários**
+
+- Biblioteca **[CVA (Class Variance Authority)][cva]** para gerenciamento de estilos dinâmicos
+- Local Storage (via hook customizado e biblioteca **[use-local-storage][use-local-storage]** )
+
+
+## **🎮 COMO UTILIZAR**
+
+### **Configurações Iniciais para rodar localmente** 🛠️
+
+- Primeiro, você precisa ter o <kbd>[NodeJS](https://nodejs.org/en/download/)</kbd> instalado na sua máquina.
+
+- Instale as dependências do projeto:
+
+  ```sh
+    $ npm install
+  ```
+
+- Iniciando o projeto localmente: 🚀
+
+  ```sh
+    $ npm run dev
+  ```
+
+
+[react]: https://react.dev/
+[typescript]: https://www.typescriptlang.org/
+[tailwind]: https://tailwindcss.com/
+[vite]: https://vite.dev/
+[react_router]: https://reactrouter.com/
+[cva]: https://cva.style/docs
+[use-local-storage]: https://github.com/nas5w/use-local-storage
