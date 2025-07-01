@@ -1,3 +1,9 @@
+<div align="center">
+
+![Logo](./public/logo.svg)
+
+</div>
+
 ## **✅ ToDo**
 
 Este projeto é uma aplicação de listagem de tarefas interativa, desenvolvida em React com TypeScript, utilizando o Vite como bundler para alta performance. O objetivo é oferecer uma experiência completa de CRUD (criar, ler, atualizar, deletar) de tarefas, com interface moderna e responsiva. A aplicação inclui funcionalidades como adicionar, editar, marcar tarefas como concluídas, e gerenciamento de estados dinâmicos, tudo em uma SPA organizada.
